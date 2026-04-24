@@ -12,7 +12,7 @@
   - Hà Tây Nguyên 
   - Nguyễn Đình Thi
   - Trường Huy 
-  - Nguyễn Thành Trung 
+  - Châu Thành Trung 
 
 ## Database Choice
 - Selected DB engine: RDS Postgre SQL
@@ -71,19 +71,21 @@ Screenshot: RDS
   + Direct internet access is blocked for security.
   + This enforces network-level isolation between app and database tiers.
 
-4. WORKING QUERY EVIDENCE
-## Relational DB (RDS)
-### Query: JOIN example
-📸 Result:
-- [image]
 
-📝 Explanation:
-- JOIN between table A and B using indexed key.
+
+4. WORKING QUERY EVIDENCE
+## JOIN Query Test (Relational DB)
+- Screenshot:
+![Test join query](images/join_query.jpg)
+- Explanation: The queries demonstrate that the PostgreSQL RDS database is working correctly and contains real data.
+ + The SELECT query confirms that the `users` table is accessible and returns existing records.
+ + The JOIN query shows correct relationships between multiple tables (`users`, `user_package_subscriptions`, `routine_packages`, `skincare_combos`), proving that foreign keys and relational structure are properly designed.
+ + The LEFT JOIN query verifies that optional relationships are handled correctly, returning user data even when related records do not exist.
 
 
 5. LAMBDA + BEDROCK
 ## Lambda Execution
-📸 CloudWatch Log:
+CloudWatch Log:
 - Timestamp:
 - Output:
 
