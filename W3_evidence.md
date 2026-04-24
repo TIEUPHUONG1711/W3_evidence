@@ -1,4 +1,4 @@
-### 1. COVER
+#### 1. COVER
 ## Group Information
 - Group number: 15
 - Members:
@@ -16,7 +16,7 @@
 - Selected DB engine: RDS Postgre SQL
 - Reason: Nhóm em chọn PostgreSQL vì dữ liệu có nhiều quan hệ phức tạp và cần đảm bảo toàn vẹn dữ liệu + transaction ACID cho luồng thanh toán. Ngoài ra PostgreSQL cũng hỗ trợ tốt với Prisma nên triển khai thuận tiện và ổn định.
 
-### 2. DATA ACCESS PATTERN LOG (A, B, C)
+#### 2. DATA ACCESS PATTERN LOG (A, B, C)
 
 ## Pattern A: [Tên pattern]
 - Description: (ngắn gọn)
@@ -39,7 +39,7 @@
 
 👉 Phần này quan trọng vì nó chứng minh bạn chọn database có lý do, không chọn bừa.
 
-### 3. DEPLOYMENT EVIDENCE
+#### 3. DEPLOYMENT EVIDENCE
 
 ## 3.1 Encryption
 Screenshot: RDS
@@ -71,18 +71,18 @@ Screenshot: RDS
 
 
 
-### 4. WORKING QUERY EVIDENCE
+#### 4. WORKING QUERY EVIDENCE
 ## JOIN Query Test (Relational DB)
 - Screenshot:
 ![Test join query](images/join_query.jpg)
 - Explanation: The queries demonstrate that the PostgreSQL RDS database is working correctly and contains real data.
- + The SELECT query confirms that the `users` table is accessible and returns existing records.
- + The JOIN query shows correct relationships between multiple tables (`users`, `user_package_subscriptions`, `routine_packages`, `skincare_combos`), proving that foreign keys and relational structure are properly designed.
- + The LEFT JOIN query verifies that optional relationships are handled correctly, returning user data even when related records do not exist.
+  + The SELECT query confirms that the `users` table is accessible and returns existing records.
+  + The JOIN query shows correct relationships between multiple tables (`users`, `user_package_subscriptions`, `routine_packages`, `skincare_combos`), proving that foreign keys and relational structure are properly designed.
+  + The LEFT JOIN query verifies that optional relationships are handled correctly, returning user data even when related records do not exist.
 
 
 
-### 5. LAMBDA + BEDROCK
+#### 5. LAMBDA + BEDROCK
 ## Lambda Execution
 CloudWatch Log:
 - Timestamp:
@@ -106,12 +106,6 @@ CloudWatch Log:
   + This confirms that Bedrock service is enabled and IAM permissions allow listing and using Anthropic models in region us-west-2.
 
 ### 6. VPC + NETWORKING
-## Route Table (S3 Gateway Endpoint)
-- Screenshot:
-
-- Explanation:
-
-
 ## S3 Gateway VPC Endpoint
 - Screenshot:
 ![s3 gateway vpc endpoint](images/s3_gw_vpc_endpoint.jpg)
