@@ -1,6 +1,4 @@
-1. 🧾 COVER (Trang đầu)
-# W3 Evidence Pack
-
+### 1. COVER
 ## Group Information
 - Group number: 15
 - Members:
@@ -18,7 +16,7 @@
 - Selected DB engine: RDS Postgre SQL
 - Reason: Nhóm em chọn PostgreSQL vì dữ liệu có nhiều quan hệ phức tạp và cần đảm bảo toàn vẹn dữ liệu + transaction ACID cho luồng thanh toán. Ngoài ra PostgreSQL cũng hỗ trợ tốt với Prisma nên triển khai thuận tiện và ổn định.
 
-2. DATA ACCESS PATTERN LOG (A, B, C)
+### 2. DATA ACCESS PATTERN LOG (A, B, C)
 
 ## Pattern A: [Tên pattern]
 - Description: (ngắn gọn)
@@ -41,7 +39,7 @@
 
 👉 Phần này quan trọng vì nó chứng minh bạn chọn database có lý do, không chọn bừa.
 
-3. DEPLOYMENT EVIDENCE
+### 3. DEPLOYMENT EVIDENCE
 
 ## 3.1 Encryption
 Screenshot: RDS
@@ -73,7 +71,7 @@ Screenshot: RDS
 
 
 
-4. WORKING QUERY EVIDENCE
+### 4. WORKING QUERY EVIDENCE
 ## JOIN Query Test (Relational DB)
 - Screenshot:
 ![Test join query](images/join_query.jpg)
@@ -84,7 +82,7 @@ Screenshot: RDS
 
 
 
-5. LAMBDA + BEDROCK
+### 5. LAMBDA + BEDROCK
 ## Lambda Execution
 CloudWatch Log:
 - Timestamp:
@@ -107,7 +105,7 @@ CloudWatch Log:
     - Haiku: optimized for speed and low cost
   + This confirms that Bedrock service is enabled and IAM permissions allow listing and using Anthropic models in region us-west-2.
 
-6. VPC + NETWORKING
+### 6. VPC + NETWORKING
 ## Route Table (S3 Gateway Endpoint)
 - Screenshot:
 
@@ -125,7 +123,7 @@ CloudWatch Log:
   + This improves security and reduces cost by eliminating NAT Gateway usage.
 
 
-7. SECURITY TEST (DENIED ACCESS)
+### 7. SECURITY TEST (DENIED ACCESS)
 ## S3 Public Access Test
 - Screenshot:
 ![S3 public access test](images/public_access_onS3.jpg)
@@ -145,7 +143,7 @@ CloudWatch Log:
   + Connection attempt from external network (laptop public IP) is blocked as expected.
   + This confirms network-level isolation is correctly enforced.
 
-8. BONUS (OPTIONAL)
+### 8. BONUS (OPTIONAL)
 ## Before vs After
 📸 Screenshot:
 - Before:
