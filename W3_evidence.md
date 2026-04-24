@@ -45,13 +45,13 @@
 
 ## 3.1 Encryption
 Screenshot: RDS
-- ![RDS Deployment evidence](images/deployment_evidence.jpg)
+![RDS Deployment evidence](images/deployment_evidence.jpg)
 
 - Explanation:
- + RDS PostgreSQL is successfully deployed and running.
- + Storage encryption is enabled using AWS KMS to secure data at rest.
- + Public access is disabled to prevent exposure to the internet.
- + Database is deployed inside a private subnet group for security isolation.
+  + RDS PostgreSQL is successfully deployed and running.
+  + Storage encryption is enabled using AWS KMS to secure data at rest.
+  + Public access is disabled to prevent exposure to the internet.
+  + Database is deployed inside a private subnet group for security isolation.
 
 ## 3.2 Backup
 📸 Screenshot:
@@ -83,6 +83,7 @@ Screenshot: RDS
  + The LEFT JOIN query verifies that optional relationships are handled correctly, returning user data even when related records do not exist.
 
 
+
 5. LAMBDA + BEDROCK
 ## Lambda Execution
 CloudWatch Log:
@@ -99,12 +100,12 @@ CloudWatch Log:
 ![Bedrock foundation models access](images/bedrock.jpg)
 
 - Explanation:
- + AWS Bedrock account has access to multiple Anthropic foundation models.
- + Models include different tiers:
-   - Opus: highest reasoning capability (most powerful, highest cost)
-   - Sonnet: balanced performance and cost
-   - Haiku: optimized for speed and low cost
- + This confirms that Bedrock service is enabled and IAM permissions allow listing and using Anthropic models in region us-west-2.
+  + AWS Bedrock account has access to multiple Anthropic foundation models.
+  + Models include different tiers:
+    - Opus: highest reasoning capability (most powerful, highest cost)
+    - Sonnet: balanced performance and cost
+    - Haiku: optimized for speed and low cost
+  + This confirms that Bedrock service is enabled and IAM permissions allow listing and using Anthropic models in region us-west-2.
 
 6. VPC + NETWORKING
 ## Route Table (S3 Gateway Endpoint)
@@ -118,10 +119,10 @@ CloudWatch Log:
 ![s3 gateway vpc endpoint](images/s3_gw_vpc_endpoint.jpg)
 
 - Explanation:
- + Configured S3 Gateway VPC Endpoint inside the VPC.
- + Route tables are associated with the endpoint, enabling private routing to S3.
- + Traffic from EC2/Lambda to S3 does not traverse the public internet.
- + This improves security and reduces cost by eliminating NAT Gateway usage.
+  + Configured S3 Gateway VPC Endpoint inside the VPC.
+  + Route tables are associated with the endpoint, enabling private routing to S3.
+  + Traffic from EC2/Lambda to S3 does not traverse the public internet.
+  + This improves security and reduces cost by eliminating NAT Gateway usage.
 
 
 7. SECURITY TEST (DENIED ACCESS)
@@ -130,19 +131,19 @@ CloudWatch Log:
 ![S3 public access test](images/public_access_onS3.jpg)
 
 - Explanation:
- + S3 bucket is not publicly accessible.
- + Block Public Access is enabled and prevents public reads.
- + This ensures static assets are protected and can only be accessed via authorized methods (e.g., CloudFront or IAM roles).
+  + S3 bucket is not publicly accessible.
+  + Block Public Access is enabled and prevents public reads.
+  + This ensures static assets are protected and can only be accessed via authorized methods (e.g., CloudFront or IAM roles).
 
 ## RDS Connectivity Test from Public Network
 - Screenshot: 
 ![network security](images/rds_connectivity_test.jpg)
 
 - Explanation:
- + RDS is deployed in a private subnet and not publicly accessible.
- + Security Group restricts inbound access to internal VPC resources only.
- + Connection attempt from external network (laptop public IP) is blocked as expected.
- + This confirms network-level isolation is correctly enforced.
+  + RDS is deployed in a private subnet and not publicly accessible.
+  + Security Group restricts inbound access to internal VPC resources only.
+  + Connection attempt from external network (laptop public IP) is blocked as expected.
+  + This confirms network-level isolation is correctly enforced.
 
 8. BONUS (OPTIONAL)
 ## Before vs After
