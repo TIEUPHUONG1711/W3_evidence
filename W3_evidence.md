@@ -15,7 +15,7 @@
 
 ## Database Choice
 - Selected DB engine: RDS Postgre SQL
-- Reason: Nhóm em chọn PostgreSQL vì dữ liệu có nhiều quan hệ phức tạp và cần đảm bảo toàn vẹn dữ liệu + transaction ACID cho luồng thanh toán. Ngoài ra PostgreSQL cũng hỗ trợ tốt với Prisma nên triển khai thuận tiện và ổn định.
+- Reason: We chose PostgreSQL because the data involves complex relationships and requires strong data integrity and ACID transactions, especially for the payment workflow. In addition, PostgreSQL works well with Prisma, making the implementation more convenient and stable.
 
 
 #### 2. DATA ACCESS PATTERN LOG (A, B, C)
@@ -33,7 +33,7 @@
 
 ## Pattern B: Subscription & Payment Transactions
 
-- Description: Users purchase skincare packages and manage subscriptions with payment processing (VNPay integration).
+- Description: Users purchase skincare packages and manage subscriptions with payment processing.
 - Access type: Write + Read
 - Frequency: Medium
 - Chosen engine: RDS PostgreSQL
@@ -42,16 +42,6 @@
   - Includes relational data (users, packages, subscriptions, payments).
   - Supports rollback in case of payment failure (ACID compliance).
 
-## Pattern C: Affiliate Tracking & Event Logging
-
-- Description: System tracks affiliate link clicks and user interaction logs for marketing analysis.
-- Access type: Write-heavy
-- Frequency: High
-- Chosen engine: DynamoDB (or RDS if not separated)
-- Reason:
-  - High volume of write operations (click logs, events).
-  - No complex relationships required.
-  - Fast ingestion and scalable storage needed.
 
 ## Trade-offs
 
